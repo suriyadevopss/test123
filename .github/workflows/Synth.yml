@@ -22,4 +22,4 @@ jobs:
         run: yarn
 
       - name: Synth stack
-        run: yarn cdk syh
+        run: yarn cdk synth --all --require-approval never
