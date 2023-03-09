@@ -3,14 +3,15 @@ on:
   workflow_run:
     workflows: ["Synth"]
     branches: [main]
-
+    types: 
+      - completed
 permissions:
   id-token: write
   contents: read
   
 jobs:
   DeployStacks:
-
+    needs: [Synth] # build - if you want to deploy in parallel with Staging
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
