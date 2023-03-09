@@ -1,0 +1,11 @@
+# .github/workflows/second-workflow.yml
+
+name: Second Workflow
+on: [push]
+needs: first-workflow
+
+jobs:
+  second-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This is the second job"
