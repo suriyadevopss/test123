@@ -11,7 +11,6 @@ permissions:
   
 jobs:
   DeployStacks:
-    needs: [Synth] # build - if you want to deploy in parallel with Staging
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
